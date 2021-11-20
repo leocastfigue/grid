@@ -1,0 +1,301 @@
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* body{
+    font-family:sans-serif;
+}
+.container{
+    background: bisque;
+    outline: 1px solid #000;
+    min-height: 80vh;
+    width: 93%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 10px;
+}
+.position{
+    background: slateblue;
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.25rem;
+} */
+/* .relative{ */
+    /* position:relative; */
+    /* con esto desbloqueamos propiedades de desplazami ento(top, left, right, bottom) y de apilamiento, y estos movimientos son relativos a SU POSICION ORIGINAL, O SEA, VA A MOVERSE 20PX A LA IZQUIERDA, DESDE EL LUGAR ORIGINAL DONDE ESTABA. Y la propiedad o contexto de apilamiento, un elemento posicionado(ej: relative), siempre se superpondra a un elemento sin posicionamiento   */ 
+    /* left: 20px; */
+
+/* } */
+
+/* .absolute{ */
+    /* background: tomato; */
+    /* position: relative; */
+    /* z-index: 1; */
+    /* con esto evito que el elemento se superponga encimma de este */
+    /* position: absolute; */
+    /* z-index: 1;  */
+    /* con el z-index:1, lo hacemos aparever encima del elemento q lo habia tapado */
+    /* sale del flujo, pero sigue estando en el documento, pero NO SE VE, porque queda debajo del otro elemento. LA POSICION ABSOLUTA, EL ELEMENTO NO SE DESPLAZA EN BASE A SU ORIGEN A DIF DEL RELATIVE, SINO QUE SE DESPLAZA A SU ANCESTRO POSICIONADO MAS CERCANO, ESTO SERIA ASI, QUE UN ELEMENTO SE VA A DESPLAZAR DE ACUERDO A LA POSICION DEL CONTENEDOR MAS CERCANO, "PERO TIENE QUE TENER LA PROPIEDAD POSITION", SINO SU POSICIONAMIENTO VA SER A PARTIR DEL BODY, Y ESTO NOS AYUDA A no solo posicionar el elemento mas facil, sino que tambien le podemos dar el tamaño por ej con estas propiedades { top:10%, left:10% bottom:10%, right:10%, esto no dice que este DIV va a empezar su tamaño al 10% a la izquierda y va a terminar al 10% de la derecha, igual para arriba y para abajo}  */
+    /* bottom: 0;
+    left: 0;
+     margin: 0;   */
+/* } */
+/* .container {
+    margin: 0 auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+    border: medium solid #000;
+}
+.item {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #666;
+    border: medium solid #999; 
+}
+
+/* .grid-explicit{ */
+    /* display: grid; asi invocamos a GRID */
+    /* grid-template-rows: 2rem 20vw 30%; definimos cada una de las columnas con con espacios y los valores, en este caso van a ser 3 */
+    /* grid-template-columns: 50% 100px 1fr; para definir las filas vamos a decir que la 1er fila sea del 50% del espacio, la 2da de 100 pixeles, y la 3ra de un fr que seria una fraccion del espacio sobrante, x ej aqui tenemos un contenedor de 368,39 */
+/* }  */
+/* 
+.container{
+    background-color: bisque; */
+    /* border: 1px solid black; */
+    /* height: 30vh; */
+
+
+
+    /* display:flex; */
+    /* flex-flow: column wrap; */
+    /* justify-content: flex-start; */
+    /* align-items: stretch; */
+    /* align-content: flex-end; */
+    
+
+/* } */
+/* .item{ */
+    /* width: 10vw; */
+    /* border: medium solid rgb(192, 190, 190); */
+    /* background-color: salmon; */
+    /* width: 20%; */
+    /* height: 20%;  */
+    /* flex-grow: 1; */
+/* } */
+/* .item:nth-child(2){ */
+    /* flex-grow: 2; */
+    /* flex-shrink: 1; */
+    /* align-self: center; */
+/* } */
+
+
+
+
+ /* RESPONSIVE FLEXBOX ARTESANAL */
+ /* .container{
+     margin: auto;
+     max-width: 1200px;
+ }
+ .flex-container{
+    display: flex;
+    flex-flow: row wrap;
+ }
+ .flex-item{
+     border: thin solid black;
+     flex: 0 0 100%;
+ } */
+
+/* // Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) { 
+    .flex-item{
+        flex: 0 0 50%;
+    }
+ } */
+
+/* // Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {
+    .flex-item{
+        flex: 0 0 33.333333333333333%;
+    }
+ } */
+
+/* // Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { 
+    .flex-item{
+        flex: 0 0 25%;
+    }
+ } */
+
+/* // X-Large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { 
+    .flex-item{
+        flex: 0 0 16.66666666667%;
+    }
+} */
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+/* @media (min-width: 1400px) {
+
+} */
+
+/* EJEMPLOS PRACTICOS FLEXBOX */
+/* STICKY FOOTER */
+/* Se hace de esta manera, xq el main con la propiedad flex-grow, ocupa el resto del espacio disponible, estonces el footer siempre se va a quedar abajo */
+/* body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+main{
+    flex-grow: 1;
+}
+.titulares{
+    padding: 1rem;
+    background-color:#222;
+    color: #eee;
+}
+
+
+/* NAVBAR */
+/* body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+main{
+    flex-grow: 1;
+}
+.titulares{
+    padding: 1rem;
+    background-color:#222;
+    color: #eee;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.menu ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+@media screen and (min-width: 1024px) { 
+DE ESTA MANERA SE ALINEA EL TITULO (LOGO) CON LAS LISTAS
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+DES ESTA MANERA SE ALINEAN LAS LISTAS
+    .menu ul{
+        display: flex;
+    }
+    .menu li{
+        padding: .5rem;
+    }
+ }  */
+
+/* HERO IMAGE */
+/* body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+main{
+    flex-grow: 1;
+}
+.titulares{
+    padding: 1rem;
+    background-color:#222;
+    color: #eee;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.menu ul{
+    list-style-type: none;
+    padding: 0;
+} */
+/* PONEMOS UN FONDO, LE DAMOS LA ALTURA CON MIN-HEIGHT, LE DAMOS QUE NO SE REPITA */
+/* .hero-image{
+    min-height: 100vh;
+    background-image: url("https://placeimg.com/1280/720/animals");
+    background-repeat: no-repeat;
+    color: #fff;
+} */
+/* .hero-image div{ */
+    /* CON MIN-HEIGHT: INHERIT, LE DECIMOS QUE HEREDE EL TAMAÑO DE SU CONTAINER PADRE (MIN-HEIGHT: 100VH) */
+    /* min-height: inherit; */
+    /* A PARTIR DE ACA LE DAMOS UN DISPLAY PARA CENTRAR EL TITULO */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* CON ESTO LE DAMOS TRANPARENCIA A LA IMAGEN */
+    /* background-color: rgba(0,0,0,.75); */
+    /* CON ESTO CENTRAMOS EL TEXTO */
+    /* text-align: center; */
+/*     
+}
+.hero-image{ */
+    /* CON ESTO LE DECIMOS AL TEXTO QUE SE VAYA AUMENTANDO O DISMINUYENDO DE TAMAÑO DEPENDIENDO DE QUE SE AJUSTE EL TAMAÑO DE LA IMAGEN */
+    /* font-size: 5vw;
+}
+
+@media screen and (min-width: 1024px) {  */
+/* DE ESTA MANERA SE ALINEA EL TITULO (LOGO) CON LAS LISTAS */
+    /* .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } */
+/* DES ESTA MANERA SE ALINEAN LAS LISTAS */
+    /* .menu ul{
+        display: flex;
+    }
+    .menu li{
+        padding: .5rem;
+    }
+ }  */
+.container{
+    border: medium solid #000;
+    margin: 0;
+    width: 80%;
+    height: 80vh;
+    background-color: #222;
+}
+.container{
+    background: fixed;
+}
+hsakjdhjkashdkjhaskjdhkjashdaksjhdkja
+/* TOKEN LOCAL */
+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
+/* 2DO TOKEN */
+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
+.item{
+    padding: 1rem;
+    font-size: 1.35rem;
+    background-color: #666;
+    border: medium solid #999; 
+}
+la;skd;laskd;lkasl;dka;skd;lask;ldkasl;da;sld;lk;link
+.grid-flow{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 120px);
+    grid-auto-flow: row;
+    grid-auto-rows: 120px;
+}
+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
